@@ -1,0 +1,9 @@
+Start
+    Input a number n
+    If n > 0
+       Add 10 
+    Else
+       Subtract 10
+    End if
+    Display the number
+End
