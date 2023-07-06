@@ -12,7 +12,6 @@ namespace ConsoleApp4
             int length = str.Length;
             Console.WriteLine("Length of the entered word= " + length);
 
-
             //Reverse of the string
             string reverse = "";
             int Lastindex = str.Length - 1;
