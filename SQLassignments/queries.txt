@@ -20,3 +20,34 @@ VALUES (1, 'Jubiya', N'ജൂബിയ'),
 (3,'Joseph',N'ജോസഫ്')
 
 SELECT * FROM Language
+
+//Create the tables required for an online book store
+CREATE TABLE Book(
+BId INT IDENTITY PRIMARY KEY,     //the primary key value should be updated automatically 
+Btitle VARCHAR(35),
+AId INT,
+PId INT,
+BLanguage VARCHAR(35),
+Genre VARCHAR(30),
+Qty INT,
+Createdon DATETIME DEFAULT CURRENT_TIMESTAMP           //“created on” field which denotes the date and time when each record was inserted
+)
+
+CREATE TABLE Author(
+AId INT,
+Aname VARCHAR(35),
+BId INT,
+)
+
+CREATE TABLE Publisher(
+PId INT,
+Pname VARCHAR(25),
+Pdate DATETIME
+)
+
+CREATE TABLE CUSTOMER(
+CId INT,
+Cname VARCHAR(30),
+MobileNo INT,
+Email VARCHAR(35)
+)
