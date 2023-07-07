@@ -1,0 +1,3 @@
+SELECT IDENT_CURRENT('Book')                              //get last incremented value of id
+
+SELECT  FORMAT (getdate(), 'dd-MM-yy') as date           // display date in 'dd-mm-yyyy' format
