@@ -22,32 +22,68 @@ VALUES (1, 'Jubiya', N'ജൂബിയ'),
 SELECT * FROM Language
 
 //Create the tables required for an online book store
+
 CREATE TABLE Book(
-BId INT IDENTITY PRIMARY KEY,     //the primary key value should be updated automatically 
+BId INT IDENTITY(101,1) PRIMARY KEY,                             //the primary key value should be updated automatically
 Btitle VARCHAR(35),
 AId INT,
 PId INT,
 BLanguage VARCHAR(35),
 Genre VARCHAR(30),
 Qty INT,
-Createdon DATETIME DEFAULT CURRENT_TIMESTAMP           //“created on” field which denotes the date and time when each record was inserted
+Createdon DATETIME DEFAULT CURRENT_TIMESTAMP                //“created on” field which denotes the date and time when each record was inserted
 )
 
 CREATE TABLE Author(
 AId INT,
 Aname VARCHAR(35),
-BId INT,
+BId INT
 )
 
 CREATE TABLE Publisher(
 PId INT,
 Pname VARCHAR(25),
-Pdate DATETIME
+Pdate DATE
 )
 
 CREATE TABLE CUSTOMER(
 CId INT,
 Cname VARCHAR(30),
-MobileNo INT,
+MobileNo BIGINT,
 Email VARCHAR(35)
 )
+
+INSERT INTO Book(Btitle , AId , PId , BLanguage , Genre, Qty)
+VALUES ('Fault in our Stars',1000,2000,'English','Romance',45),
+       ('The Nightingale',1001,2001,'English','Drama',15)
+
+INSERT INTO Book(Btitle , AId , PId , BLanguage , Genre, Qty)
+VALUES ('Harry Potter',1002,2002,'English','Fantasy',1245),
+       ('Don Quixote',1003,2003,'Spanish','Adventure',8)
+
+SELECT * FROM Book
+
+INSERT INTO Author(AId , Aname, BId )
+VALUES (1000,'John Green',101),
+       (1001,'Kristin Hannah', 102)
+	   
+INSERT INTO Author(AId , Aname, BId )
+VALUES (1002,'JK Rowling',103),
+       (1003,'Miguel de Cervantes', 104)
+
+Select *  from Author
+
+INSERT INTO Publisher(PId,Pname,Pdate)
+VALUES (2000,'AB','2015-08-08'),
+       (2001,'CD','2020-04-30'),
+	   (2002,'PQ','1990-12-22'),
+	   (2003,'XY','2008-01-04')
+
+SELECT * FROM Publisher
+
+INSERT INTO CUSTOMER(CId , Cname , MobileNo, Email )
+VALUES (3000,'JubiyaJoseph',9444489382,'juxxxxx@gmail.com'),
+       (3001,'Bhagyalakshmi',9433479352,'bhaxxxxxx@gmail.com'),
+       (3002,'LuckySingh',9456789321,'lucky23xxxx@gmail.com')
+
+SELECT * FROM CUSTOMER
