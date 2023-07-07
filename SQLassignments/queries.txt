@@ -4,3 +4,19 @@ SELECT * FROM Student WHERE Score<50 OR Score IS NULL
 //Select fields with the value NULL
 SELECT * FROM Student WHERE Score IS NULL
 
+// handling varchar out of bounds situation
+DECLARE @j VARCHAR(max)='Pneumonoultramicroscopicsilicovolcanoconiosis'
+SELECT DATALENGTH(@j)
+
+//Store name in Malayalam inside the database
+CREATE TABLE Language(
+Sno INT ,
+Engname VARCHAR(30),
+Malayalamname NVARCHAR(35))
+
+INSERT INTO Language (Sno, Engname, Malayalamname)
+VALUES (1, 'Jubiya', N'ജൂബിയ'),
+(2, 'Betsy', N'ബെറ്റ്സി'),
+(3,'Joseph',N'ജോസഫ്')
+
+SELECT * FROM Language
