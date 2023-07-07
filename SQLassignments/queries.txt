@@ -1,0 +1,6 @@
+// Select values such that the students have failed including students whose mark field is NULL
+SELECT * FROM Student WHERE Score<50 OR Score IS NULL
+
+//Select fields with the value NULL
+SELECT * FROM Student WHERE Score IS NULL
+
