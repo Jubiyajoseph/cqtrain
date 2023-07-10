@@ -1,0 +1,9 @@
+SELECT * FROM Employee WHERE FName LIKE 'John%'                   //Display all records who’s name starts with John
+
+SELECT * FROM Employee WHERE FName LIKE '%John'                   //Display all records who’s name ends with John
+
+SELECT * FROM Employee WHERE FName LIKE '%John%'                  //Display all records who’s name have John ( can be any where )
+
+SELECT * FROM Employee WHERE FName LIKE 'A%n'                     //Display all records who’s name starts with A and ends with n
+
+SELECT * FROM Employee WHERE FName LIKE '%Alex%' OR  FName LIKE '%Deo%'  //Display all records who have alex or deo any where in name column
