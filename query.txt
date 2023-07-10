@@ -1,9 +1,0 @@
-Select *,
-CASE
-  WHEN  Score >=90 THEN 'A'
-  WHEN  Score >=80 THEN 'B'
-  WHEN  Score >=70 THEN 'C'
-  WHEN  Score >=60 THEN 'D'
-  WHEN  Score >=50 THEN 'P'
-  ELSE 'F'
-END AS Grade from Student
