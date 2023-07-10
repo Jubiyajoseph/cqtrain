@@ -7,3 +7,5 @@ SELECT * FROM Employee WHERE FName LIKE '%John%'                  //Display all 
 SELECT * FROM Employee WHERE FName LIKE 'A%n'                     //Display all records who’s name starts with A and ends with n
 
 SELECT * FROM Employee WHERE FName LIKE '%Alex%' OR  FName LIKE '%Deo%'  //Display all records who have alex or deo any where in name column
+
+SELECT * FROM Employee WHERE FName LIKE '%[%]%'                          //display string that has '%'

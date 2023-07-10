@@ -1,0 +1,33 @@
+SELECT  SCOPE_IDENTITY()  AS LatestId                     //get last incremented value of id
+
+SELECT  FORMAT (getdate(), 'dd-MM-yy') as date            // display date in 'dd-mm-yyyy' format
+
+SELECT CAST(getdate() AS DATE)                            // display only the date
+
+
+//Create an employee table with field “joiningdate” and display the joining date in two time zones - India and New York
+CREATE TABLE Employee (
+  Empid INT ,
+  FName VARCHAR(40),
+  DOB DATETIME,
+  DOJ DATETIME,
+  CONSTRAINT PK_Employee PRIMARY KEY(Empid)
+)
+
+INSERT INTO Employee(Empid,FName,DOB,DOJ)
+VALUES (100,'Jubiya Joseph','2001-04-24','2023-07-03'),
+       (101,'Ameesha Rajan','2001-09-14','2023-07-03'),
+       (102,'Tejasvi Shankar','2001-11-10','2023-07-04'),
+	     (103,'John T John','1998-04-24','2023-07-04'),
+       (104,'Christopher John Thomas','2002-09-14','2023-07-05'),
+       (105,'Alex Thomas','2003-06-10','2023-07-04')
+
+Select SWITCHOFFSET(DOJ,'+05:30') AS Indian_Jointime, SWITCHOFFSET(DOJ,'-04:00') AS US_Jointime from Employee 
+
+//For Book table: i) Display the no. of books arrived during the last year and ii) Display the no. of books arrived on every Monday during the last year
+SELECT COUNT(*) FROM Publisher WHERE DATEPART(YEAR, Pdate) ='2022'
+
+SELECT COUNT(*) FROM Publisher  WHERE DATEPART(YEAR, Pdate)='2022' AND DATENAME(DAY,Pdate)='Monday'
+
+//For Employee table: Display the total no. of days each intern has joined
+SELECT DATEDIFF(DAY,DOJ,GETDATE()) as numofdays from Employee
