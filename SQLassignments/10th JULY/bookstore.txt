@@ -1,3 +1,19 @@
+
+CREATE TABLE Publisher(
+PId INT,
+Pname VARCHAR(25),
+Pdate DATE,
+CONSTRAINT PK_Publisher PRIMARY KEY(PId)                                         // PRIMARY key constraint
+)
+
+CREATE TABLE Author(
+AId INT,
+Aname VARCHAR(35),
+Age INT,
+CONSTRAINT PK_Author PRIMARY KEY(AId),                                          // PRIMARY key constraint
+CONSTRAINT age_check CHECK(Age>16)                                              // check constraint
+)
+
 CREATE TABLE Book(
 BId INT IDENTITY(101,1),
 Btitle VARCHAR(35),
@@ -6,25 +22,8 @@ PId INT,
 BLanguage VARCHAR(35),
 Genre VARCHAR(30),
 Qty INT,
-Createdon DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,                //default and not null constraint
-CONSTRAINT PK_Book PRIMARY KEY(BId)                                   // PRIMARY key constraint
-)
-
-
-CREATE TABLE Author(
-AId INT,
-Aname VARCHAR(35),
-Age INT,
-CONSTRAINT PK_Author PRIMARY KEY(AId),                                // PRIMARY key constraint
-CONSTRAINT age_check CHECK(Age>16)                                    // check constraint
-)
-
-
-CREATE TABLE Publisher(
-PId INT,
-Pname VARCHAR(25),
-Pdate DATE,
-CONSTRAINT PK_Publisher PRIMARY KEY(PId)                              // PRIMARY key constraint
+Createdon DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,                          //default and not null constraint
+CONSTRAINT PK_Book PRIMARY KEY(BId)                                             // PRIMARY key constraint
 )
 
 ALTER TABLE Book ADD CONSTRAINT FK_Book_Author FOREIGN KEY (AId) REFERENCES Author(AId)
