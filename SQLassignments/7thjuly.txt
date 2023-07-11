@@ -15,12 +15,12 @@ CREATE TABLE Employee (
 )
 
 INSERT INTO Employee(Empid,FName,DOB,DOJ)
-VALUES (100,'Jubiya Joseph','2001-04-24','2023-07-03'),
-       (101,'Ameesha Rajan','2001-09-14','2023-07-03'),
-       (102,'Tejasvi Shankar','2001-11-10','2023-07-04'),
-	     (103,'John T John','1998-04-24','2023-07-04'),
-       (104,'Christopher John Thomas','2002-09-14','2023-07-05'),
-       (105,'Alex Thomas','2003-06-10','2023-07-04')
+VALUES (100,'Jubiya Joseph','2001-04-24','2023-07-03 10:30:00'),
+       (101,'Ameesha Rajan','2001-09-14','2023-07-03 11:30:00'),
+       (102,'Tejasvi Shankar','2001-11-10','2023-07-04 10:45:00'),
+	     (103,'John T John','1998-04-24','2023-07-04 10:30:00'),
+       (104,'Christopher John Thomas','2002-09-14','2023-07-05 10:00:00'),
+       (105,'Alex Thomas','2003-06-10','2023-07-04 09:30:00')
 
 SELECT DOJ  AT TIME ZONE 'India Standard Time' FROM Employee
 SELECT DOJ  AT TIME ZONE 'US Eastern Standard Time' FROM Employee
