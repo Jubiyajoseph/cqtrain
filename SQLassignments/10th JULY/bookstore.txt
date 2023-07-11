@@ -1,0 +1,74 @@
+CREATE TABLE Book(
+BId INT IDENTITY(101,1),
+Btitle VARCHAR(35),
+AId INT,
+PId INT,
+BLanguage VARCHAR(35),
+Genre VARCHAR(30),
+Qty INT,
+Createdon DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,                //default and not null constraint
+CONSTRAINT PK_Book PRIMARY KEY(BId)                                   // PRIMARY key constraint
+)
+
+
+CREATE TABLE Author(
+AId INT,
+Aname VARCHAR(35),
+Age INT,
+CONSTRAINT PK_Author PRIMARY KEY(AId),                                // PRIMARY key constraint
+CONSTRAINT age_check CHECK(Age>16)                                    // check constraint
+)
+
+
+CREATE TABLE Publisher(
+PId INT,
+Pname VARCHAR(25),
+Pdate DATE,
+CONSTRAINT PK_Publisher PRIMARY KEY(PId)                              // PRIMARY key constraint
+)
+
+ALTER TABLE Book ADD CONSTRAINT FK_Book_Author FOREIGN KEY (AId) REFERENCES Author(AId)
+ALTER TABLE Book ADD CONSTRAINT FK_Book_Publisher FOREIGN KEY (PId) REFERENCES Publisher(PId)         //foreign key constraint
+
+CREATE TABLE CUSTOMER(
+CId INT,
+Cname VARCHAR(30),
+MobileNo BIGINT,
+Email VARCHAR(35),
+CONSTRAINT PK_cust PRIMARY KEY(CId),                                    // PRIMARY key constraint
+CONSTRAINT mobilenum UNIQUE(MobileNo)                                   // unique constraint
+)
+
+
+
+INSERT INTO Author(AId , Aname,  Age)
+VALUES (1000,'John Green',30),
+       (1001,'Kristin Hannah', 28),
+       (1002,'JK Rowling',56),
+       (1003,'Miguel de Cervantes', 32)
+
+Select *  from Author
+
+INSERT INTO Publisher(PId,Pname,Pdate)
+VALUES (2000,'AB','2015-08-08'),
+       (2001,'CD','2020-04-30'),
+	   (2002,'PQ','1990-12-22'),
+	   (2003,'XY','2022-01-04')
+
+SELECT * FROM Publisher
+
+INSERT INTO Book(Btitle , AId , PId , BLanguage , Genre, Qty)
+VALUES ('Fault in our Stars',1000,2000,'English','Romance',45),
+       ('The Nightingale',1001,2001,'English','Drama',15),
+       ('Harry Potter',1002,2002,'English','Fantasy',1245),
+       ('Don Quixote',1003,2003,'Spanish','Adventure',8)
+
+SELECT * FROM Book
+
+INSERT INTO CUSTOMER(CId , Cname , MobileNo, Email )
+VALUES (3000,'JubiyaJoseph',9444489382,'juxxxxx@gmail.com'),
+       (3001,'Bhagyalakshmi',9433479352,'bhaxxxxxx@gmail.com'),
+       (3002,'LuckySingh',9456789321,'lucky23xxxx@gmail.com'),
+	   (3003,'JubinJose',9478389382,'jubin54xxx@gmail.com')
+
+SELECT * FROM CUSTOMER
