@@ -1,6 +1,6 @@
-SELECT  SCOPE_IDENTITY()  AS LatestId                     //get last incremented value of id
+SELECT  SCOPE_IDENTITY()                                  //get last incremented value of id
 
-SELECT  FORMAT (getdate(), 'dd-MM-yy') as date            // display date in 'dd-mm-yyyy' format
+SELECT  FORMAT (getdate(), 'dd-MM-yyyy') as Date           // display date in 'dd-mm-yyyy' format
 
 SELECT CAST(getdate() AS DATE)                            // display only the date
 
@@ -22,7 +22,8 @@ VALUES (100,'Jubiya Joseph','2001-04-24','2023-07-03'),
        (104,'Christopher John Thomas','2002-09-14','2023-07-05'),
        (105,'Alex Thomas','2003-06-10','2023-07-04')
 
-Select SWITCHOFFSET(DOJ,'+05:30') AS Indian_Jointime, SWITCHOFFSET(DOJ,'-04:00') AS US_Jointime from Employee 
+SELECT DOJ  AT TIME ZONE 'India Standard Time' FROM Employee
+SELECT DOJ  AT TIME ZONE 'US Eastern Standard Time' FROM Employee
 
 //For Book table: i) Display the no. of books arrived during the last year and ii) Display the no. of books arrived on every Monday during the last year
 SELECT COUNT(*) FROM Publisher WHERE DATEPART(YEAR, Pdate) ='2022'
