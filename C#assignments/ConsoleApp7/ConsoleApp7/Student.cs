@@ -13,14 +13,19 @@ namespace ConsoleApp7
         public int Id { get; set; }
         public string Name { get; set; }
         public int Mark { get; set; }
-        public char Grade  { get;  }
+        public char Grade
+        { 
+            get
+            {
+
+            }
+        }
 
         public Student(int id,string name,int mark)
         {
             Id = id;
             Name = name;
             Mark = mark;
-            Grade = Calculate(Mark);
         }
         public char Calculate(int Mark)
         {
@@ -30,10 +35,8 @@ namespace ConsoleApp7
                 return 'B';
             else if (Mark >= 70 && Mark < 80)
                 return 'C';
-            else if (Mark < 70)
+            else 
                 return 'D';
-            else
-                return 'F';
         }
         public void Display()
         {
