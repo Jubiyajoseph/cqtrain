@@ -1,15 +1,15 @@
-CREATE TABLE Publisher(
-PublisherId INT,
-PubslisherName VARCHAR(25) NOT NULL,
-CONSTRAINT PK_Publisher PRIMARY KEY(PublisherId)
-)
-
 CREATE TABLE Author(
 AuthorId INT,
 AuthorName VARCHAR(35) NOT NULL,
 Age INT,
 CONSTRAINT PK_Author PRIMARY KEY(AuthorId),
 CONSTRAINT age_check CHECK(Age>16)
+)
+
+CREATE TABLE Publisher(
+PublisherId INT,
+PubslisherName VARCHAR(25) NOT NULL,
+CONSTRAINT PK_Publisher PRIMARY KEY(PublisherId)
 )
 
 CREATE TABLE Language(
@@ -27,7 +27,6 @@ CONSTRAINT PK_Genre PRIMARY KEY(GenreId)
 CREATE TABLE Book(
 BookId INT IDENTITY(101,1),
 Booktitle VARCHAR(35),
-AuthorId INT,
 PublisherId INT,
 Publishdate DATE,
 LanguageId INT,
@@ -36,10 +35,20 @@ Createdon DATETIME CONSTRAINT bookadd DEFAULT GETUTCDATE() NOT NULL,
 CONSTRAINT PK_Book PRIMARY KEY(BookId)
 )
 
-ALTER TABLE Book ADD CONSTRAINT FK_Book_Author FOREIGN KEY (AuthorId) REFERENCES Author(AuthorId)
+
 ALTER TABLE Book ADD CONSTRAINT FK_Book_Publisher FOREIGN KEY (PublisherId) REFERENCES Publisher(PublisherId)
 ALTER TABLE Book ADD CONSTRAINT FK_Book_Language FOREIGN KEY (LanguageId) REFERENCES Language(LanguageId)
 ALTER TABLE Book ADD CONSTRAINT FK_Book_Genre FOREIGN KEY (GenreId) REFERENCES Genre(GenreId)
+
+CREATE TABLE BookAuthor(
+BookAuthorId INT,
+BookId INT,
+AuthorId INT,
+CONSTRAINT PK_BookAuthor PRIMARY KEY(BookAuthorId)
+)
+
+ALTER TABLE BookAuthor ADD CONSTRAINT FK_BookAuthor_Author FOREIGN KEY (AuthorId) REFERENCES Author(AuthorId)
+ALTER TABLE BookAuthor ADD CONSTRAINT FK_BookAuthor_Book FOREIGN KEY (BookId) REFERENCES Book(BookId)
 
 CREATE TABLE Customer(
 CustomerId INT,
@@ -54,7 +63,7 @@ CREATE TABLE BookOrder(
 OrderId INT,
 CustomerId INT,
 Orderdate DATE,
-CONSTRAINT PK_Order PRIMARY KEY(OrderId)
+CONSTRAINT PK_BookOrder PRIMARY KEY(OrderId)
 )
 
 ALTER TABLE BookOrder ADD CONSTRAINT FK_BookOrder_Customer FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId)
