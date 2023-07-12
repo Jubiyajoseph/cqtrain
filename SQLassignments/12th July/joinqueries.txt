@@ -1,0 +1,49 @@
+
+--Show the CompanyName for James D. Kramer
+SELECT CompanyName from SalesLT.Customer where FirstName='James' and MiddleName='D.' and
+LastName='Kramer'
+
+--Show all the addresses listed for company 'Modular Cycle Systems' 
+SELECT A.*
+FROM SalesLT.Customer C JOIN SalesLT.CustomerAddress CA
+ON C.CustomerID = CA.CustomerID 
+JOIN
+SalesLT.Address A ON CA.AddressID = A.AddressID
+WHERE CompanyName='Modular Cycle Systems'
+
+--Show OrdeQty, the Product Name and the Product ListPrice of the order made by CustomerID 635 or 30025
+SELECT Name,ListPrice,OrderQty FROM 
+SalesLT.Customer C INNER JOIN SalesLT.SalesOrderHeader SOH
+ON C.CustomerID=SOH.CustomerID
+INNER JOIN SalesLT.SalesOrderDetail SOD
+ON SOH.SalesOrderID=SOD.SalesOrderID
+INNER JOIN SalesLT.Product P
+ON SOD.ProductID=P.ProductID WHERE C.CustomerID=635 OR C.CustomerID=30025
+
+--Show the first name and the email address of customer with CompanyName 'Bike World'
+SELECT FirstName,EmailAddress FROM SalesLT.Customer WHERE CompanyName='Bike World'
+
+--Show the CompanyName for all customers with an address in City 'Dallas'.
+SELECT  CompanyName, City FROM SalesLT.Customer C JOIN SalesLT.CustomerAddress CA
+ON C.CustomerID=CA.CustomerID JOIN
+SalesLT.Address A ON A.AddressID=CA.AddressID
+WHERE A.City='Dallas'
+
+--How many items with ListPrice more than $1000 have been sold?
+SELECT COUNT(*) FROM SalesLT.SalesOrderDetail SOD
+INNER JOIN
+SalesLT.Product P ON SOD.ProductID=P.ProductID
+WHERE P.ListPrice>1000
+
+--.Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight
+
+
+
+--Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
+
+
+--“Single Item Order” is a customer order where only one item is ordered. Show the SalesOrderID and the UnitPrice for every Single Item Order.
+
+
+--10.Show the product description for culture ‘fr’ for product with ProductID 736.
+
