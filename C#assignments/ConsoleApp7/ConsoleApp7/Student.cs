@@ -17,7 +17,14 @@ namespace ConsoleApp7
         { 
             get
             {
-
+                if (Mark >= 90)
+                    return 'A';
+                else if (Mark >= 80 && Mark < 90)
+                    return 'B';
+                else if (Mark >= 70 && Mark < 80)
+                    return 'C';
+                else
+                    return 'D';
             }
         }
 
@@ -27,17 +34,7 @@ namespace ConsoleApp7
             Name = name;
             Mark = mark;
         }
-        public char Calculate(int Mark)
-        {
-            if (Mark >= 90)
-                return 'A';
-            else if (Mark >= 80 && Mark < 90)
-                return 'B';
-            else if (Mark >= 70 && Mark < 80)
-                return 'C';
-            else 
-                return 'D';
-        }
+        
         public void Display()
         {
             Console.WriteLine("StudentId="+ Id);
