@@ -1,22 +1,24 @@
+
 --1. What is the Name, ProductID and Weight for the item with Product Number 'RM-M823'
  
-SELECT Name,ProductID,Weight FROM Production.Product WHERE ProductNumber='RM-M823'
+SELECT Name,ProductID,Weight FROM SalesLT.Product WHERE ProductNumber='RM-M823'
 
 --2. List products with weight greater than 500. For those products, show the following information: Product ID, Name, ListPrice and calculated Gross Margin (difference between list price and standard cost)
  
 SELECT ProductID,Name,ListPrice, (ListPrice-StandardCost) AS GrossMargin
-from Production.Product where weight>500
+from SalesLT.Product where weight>500
 
 --3. How many Products are there with the standard weight between 400 and 500
-select count(*) from Production.Product where Weight BETWEEN 400 AND 500
+select count(*) from SalesLT.Product where Weight BETWEEN 400 AND 500
  
 --4. How many Yellow colored bikes are there (Bikes can be identified by the Product number starting with 'BK')
-select COUNT(*) from Production.Product WHERE ProductNumber LIKE 'BK%' AND Color='Yellow'
+select COUNT(*) from SalesLT.Product WHERE ProductNumber LIKE 'BK%' AND Color='Yellow'
  
 --5. Find average, maximum and minimum list price for each Product line (exclude products where Product line is NULL), sort descending by Average Standard Cost.
 
-select AVG(ListPrice) AS AVERAGE, MAX(ListPrice) AS MAXIMUM, MIN(ListPrice) AS MININMUM
-from Production.Product 
-WHERE ProductLine IS NOT NULL
-GROUP BY ProductLine 
+select AVG(ListPrice) AS AVERAGE, MAX(ListPrice) AS MAXIMUM, MIN(ListPrice) AS MINIMUM,
+SUBSTRING(ProductNumber,1,2) AS ProductLine
+from SalesLT.Product 
+WHERE SUBSTRING(ProductNumber,1,2)  IS NOT NULL
+GROUP BY (SUBSTRING(ProductNumber,1,2)) 
 ORDER BY AVG(StandardCost) DESC

@@ -30,10 +30,17 @@ SalesLT.Address A ON A.AddressID=CA.AddressID
 WHERE A.City='Dallas'
 
 --How many items with ListPrice more than $1000 have been sold?
+SELECT COUNT(*) FROM
+(SELECT P.ProductID FROM SalesLT.SalesOrderDetail SOD
+LEFT JOIN SalesLT.Product P ON
+SOD.ProductID= P.ProductID WHERE P.ListPrice>1000 GROUP BY P.ProductID) AS T
 
 
 --.Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight
-
+SELECT C.CompanyName, (SOH.SubTotal + SOH.TaxAmt + SOH.Freight) AS Amount
+FROM SalesLT.Customer C
+JOIN SalesLT.SalesOrderHeader SOH ON C.CustomerID = SOH.CustomerID
+WHERE (SOH.SubTotal + SOH.TaxAmt + SOH.Freight) > 100000
 
 
 --Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
