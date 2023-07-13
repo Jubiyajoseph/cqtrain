@@ -30,20 +30,31 @@ SalesLT.Address A ON A.AddressID=CA.AddressID
 WHERE A.City='Dallas'
 
 --How many items with ListPrice more than $1000 have been sold?
-SELECT COUNT(*) FROM SalesLT.SalesOrderDetail SOD
-INNER JOIN
-SalesLT.Product P ON SOD.ProductID=P.ProductID
-WHERE P.ListPrice>1000
+
 
 --.Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight
 
 
 
 --Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
-
+SELECT SUM(sod.OrderQty) 
+FROM SalesLT.SalesOrderDetail sod
+JOIN SalesLT.Product p ON sod.ProductID = p.ProductID
+JOIN SalesLT.SalesOrderHeader soh ON sod.SalesOrderID = soh.SalesOrderID
+JOIN SalesLT.Customer c ON soh.CustomerID = c.CustomerID
+WHERE p.Name = 'Racing Socks, L' AND c.CompanyName = 'Riding Cycles'
 
 --“Single Item Order” is a customer order where only one item is ordered. Show the SalesOrderID and the UnitPrice for every Single Item Order.
-
+SELECT SalesOrderID,UnitPrice FROM SalesLT.SalesOrderDetail  
+WHERE SalesOrderID IN
+(SELECT SalesOrderID FROM SalesLT.SalesOrderDetail 
+GROUP BY SalesOrderID HAVING COUNT(*)=1)
 
 --10.Show the product description for culture ‘fr’ for product with ProductID 736.
+SELECT PD.Description
+FROM SalesLT.ProductDescription PD
+JOIN SalesLT.ProductModelProductDescription PMPD ON PD.ProductDescriptionID = PMPD.ProductDescriptionID
+JOIN SalesLT.ProductModel PM ON PMPD.ProductModelID = PM.ProductModelID
+JOIN SalesLT.Product P ON PM.ProductModelID = P.ProductModelID
+WHERE P.ProductID = 736 AND PMPD.Culture = 'fr'
 
