@@ -19,6 +19,33 @@ select COUNT(*) from SalesLT.Product WHERE ProductNumber LIKE 'BK%' AND Color='Y
 select AVG(ListPrice) AS AVERAGE, MAX(ListPrice) AS MAXIMUM, MIN(ListPrice) AS MINIMUM,
 SUBSTRING(ProductNumber,1,2) AS ProductLine
 from SalesLT.Product 
-WHERE SUBSTRING(ProductNumber,1,2)  IS NOT NULL
 GROUP BY (SUBSTRING(ProductNumber,1,2)) 
 ORDER BY AVG(StandardCost) DESC
+
+--1.  Use the SubTotal value in SaleOrderHeader to list orders from the largest to the smallest. For each order show the CompanyName and the SubTotal and the total weight of the order.
+
+--2. How many products in ProductCategory ‘Cranksets’ have been sold to an address in ‘London’?
+SELECT SUM(SOD.OrderQty)
+FROM SalesLT.ProductCategory PC INNER JOIN SalesLT.Product P
+   ON PC.ProductCategoryID = P.ProductCategoryID
+INNER JOIN SalesLT.SalesOrderDetail SOD
+   ON P.ProductID = SOD.ProductID
+INNER JOIN SalesLT.SalesOrderHeader SOH
+   ON SOD.SalesOrderID = SOH.SalesorderID
+INNER JOIN SalesLT.Address A
+   ON SOH.ShipToAddressID = A.AddressID
+WHERE A.City = 'London' AND PC.Name = 'Cranksets'
+
+--3.For every customer with a ‘Main Office’ in Dallas show AddressLine1 of the ‘Main Office’ and AddressLine1 of the ‘Shipping’ address - if there is no shipping address leave it blank. Use one row per customer.
+
+--4.For each order show the SalesOrderID and SubTotal calculated three ways: 
+   --A) From the SalesOrderHeader 
+   --B) Sum of OrderQtyUnitPrice 
+   --C) Sum of OrderQtyListPrice
+
+--5.Show the best selling item by value.
+
+--6.From which city 
+    --a) most no of order
+    --b) most profitable city 
+    --c) which hasn't placed any orders 
