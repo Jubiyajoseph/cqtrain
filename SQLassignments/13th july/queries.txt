@@ -24,7 +24,11 @@ ORDER BY AVG(StandardCost) DESC
 
 
 
---1.  Use the SubTotal value in SaleOrderHeader to list orders from the largest to the smallest. For each order show the CompanyName and the SubTotal and the total weight of the order.
+
+
+--1.  Use the SubTotal value in SaleOrderHeader to list orders from the largest to the smallest. 
+--For each order show the CompanyName and the SubTotal and the total weight of the order.
+
 SELECT C.CompanyName, SOH.SubTotal, SUM(SOD.OrderQty * P.weight) AS OrderWeight
 FROM SalesLT.Product P INNER JOIN SalesLT.SalesOrderDetail SOD
 ON P.ProductID = SOD.ProductID
@@ -35,6 +39,7 @@ ON SOH.CustomerID = C.CustomerID
 GROUP BY  SOH.SalesOrderID, SOH.SubTotal, C.CompanyName
 ORDER BY SOH.SubTotal DESC
 
+
 --SELECT SOD.SalesOrderID FROM SalesLT.SalesOrderDetail SOD
 --INNER JOIN SalesLT.Product P ON P.ProductID = SOD.ProductID
 
@@ -42,8 +47,8 @@ ORDER BY SOH.SubTotal DESC
 --INNER JOIN SalesLT.Product P ON P.ProductID = SOD.ProductID
 --WHERE SOD.SalesOrderID=71938
 
-
 --2. How many products in ProductCategory ‘Cranksets’ have been sold to an address in ‘London’?
+
 SELECT  COUNT(*)
 FROM SalesLT.ProductCategory PC INNER JOIN SalesLT.Product P
   ON PC.ProductCategoryID = P.ProductCategoryID
@@ -55,11 +60,25 @@ INNER JOIN SalesLT.Address A
   ON SOH.ShipToAddressID = A.AddressID
 WHERE A.City = 'London' AND PC.Name = 'Cranksets'
 
+
 --SELECT * FROM SalesLT.ProductCategory PC INNER JOIN SalesLT.Product P
 --ON PC.ProductCategoryID = P.ProductCategoryID WHERE PC.Name = 'Cranksets'
 
 
---3.For every customer with a ‘Main Office’ in Dallas show AddressLine1 of the ‘Main Office’ and AddressLine1 of the ‘Shipping’ address - if there is no shipping address leave it blank. Use one row per customer.
+--3.For every customer with a ‘Main Office’ in Dallas show AddressLine1 of the ‘Main Office’ 
+--and AddressLine1 of the ‘Shipping’ address - if there is no shipping address leave it blank. 
+--Use one row per customer.
+
+ SELECT C.CustomerID,C.FirstName,ma.AddressLine1,ISNULL(sa.AddressLine1,'')
+ FROM SalesLT.Customer C INNER JOIN SalesLT.CustomerAddress main
+ ON C.CustomerID= main.CustomerID AND main.AddressType='Main Office'
+INNER JOIN SalesLT.Address ma 
+     ON ma.AddressID=main.AddressID AND ma.City='Dallas'
+LEFT JOIN SalesLT.CustomerAddress ship 
+     ON C.CustomerID=ship.CustomerID AND ship.AddressType='Shipping'
+LEFT JOIN SalesLT.Address sa 
+     ON sa.AddressID=ship.AddressID
+ 
 
 --4.For each order show the SalesOrderID and SubTotal calculated three ways: 
    --A) From the SalesOrderHeader 
@@ -73,7 +92,7 @@ SELECT SalesOrderID,SubTotal FROM SalesLT.SalesOrderHeader
 SELECT SalesOrderID,SUM(OrderQty * UnitPrice) AS CalculatedSubTotal 
 FROM SalesLT.SalesOrderDetail GROUP BY SalesOrderID
 
---4C
+-4C
 SELECT SalesOrderID, SUM(OrderQty * ListPrice) AS CalculatedSubTotal 
 FROM  SalesLT.SalesOrderDetail SOD INNER JOIN
 SalesLT.Product P ON SOD.ProductID=P.ProductID
@@ -82,7 +101,36 @@ GROUP BY SalesOrderID
 
 --5.Show the best selling item by value.
 
+SELECT TOP 1 P.ProductID,SUM((ListPrice-StandardCost)*OrderQty) AS Profit
+FROM SalesLT.SalesOrderDetail SOD INNER JOIN SalesLT.Product P 
+ON SOD.ProductID=P.ProductID GROUP BY p.ProductID ORDER BY Profit DESC
+
+--SELECT MAX((ListPrice-StandardCost)*OrderQty) AS Profit
+--FROM SalesLT.SalesOrderDetail SOD INNER JOIN SalesLT.Product P 
+--ON SOD.ProductID=P.ProductID 
+
+
 --6.From which city 
     --a) most no of order
     --b) most profitable city 
-    --c) which hasn't placed any orders 
+    --c) which hasn't placed any orders
+
+--6A
+SELECT TOP 1 A.City, COUNT(*) AS Count
+FROM SalesLT.SalesOrderHeader SOH
+INNER JOIN SalesLT.Address A ON SOH.ShipToAddressID = A.AddressID
+GROUP BY A.City ORDER BY Count DESC
+
+--6B
+SELECT TOP 1 A.City,SUM((ListPrice-StandardCost)*OrderQty) AS Profit
+FROM SalesLT.Product P  INNER JOIN  SalesLT.SalesOrderDetail SOD
+ON SOD.ProductID=P.ProductID INNER JOIN SalesLT.SalesOrderHeader SOH
+ON SOD.SalesOrderID=SOH.SalesOrderID INNER JOIN SalesLT.Address A
+ON SOH.ShipToAddressID=A.AddressID
+GROUP BY A.City ORDER BY Profit DESC
+
+
+--6C
+SELECT DISTINCT A.City FROM SalesLT.Address A
+LEFT JOIN SalesLT.SalesOrderHeader SOH ON A.AddressID = SOH.ShipToAddressID
+WHERE SOH.SalesOrderID IS NULL
