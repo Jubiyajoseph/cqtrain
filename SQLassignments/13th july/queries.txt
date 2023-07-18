@@ -49,7 +49,7 @@ ORDER BY SOH.SubTotal DESC
 
 --2. How many products in ProductCategory ‘Cranksets’ have been sold to an address in ‘London’?
 
-SELECT  COUNT(*)
+SELECT  COUNT(DISTINCT P.ProductID)
 FROM SalesLT.ProductCategory PC INNER JOIN SalesLT.Product P
   ON PC.ProductCategoryID = P.ProductCategoryID
 INNER JOIN SalesLT.SalesOrderDetail SOD
@@ -97,6 +97,25 @@ SELECT SalesOrderID, SUM(OrderQty * ListPrice) AS CalculatedSubTotal
 FROM  SalesLT.SalesOrderDetail SOD INNER JOIN
 SalesLT.Product P ON SOD.ProductID=P.ProductID
 GROUP BY SalesOrderID
+
+--as a single query
+SELECT SOH.SalesOrderID,SOH.SubTotal, SUM(OrderQty * UnitPrice) AS CalculatedSubTotal1,
+SUM(OrderQty * ListPrice) AS CalculatedSubTotal2 
+FROM SalesLT.SalesOrderHeader SOH INNER JOIN SalesLT.SalesOrderDetail SOD
+ON SOH.SalesOrderID=SOD.SalesOrderID
+INNER JOIN SalesLT.Product P ON SOD.ProductID=P.ProductID
+GROUP BY SOH.SalesOrderID,SOH.SubTotal
+
+--as a single query using UNION ALL
+SELECT SOH.SalesOrderID,SOH.SubTotal FROM SalesLT.SalesOrderHeader SOH
+UNION ALL
+SELECT SOD.SalesOrderID,SUM(SOD.OrderQty * SOD.UnitPrice) AS CalculatedSubTotal 
+FROM SalesLT.SalesOrderDetail SOD GROUP BY SOD.SalesOrderID
+UNION ALL
+SELECT SOD.SalesOrderID, SUM(SOD.OrderQty * P.ListPrice) AS CalculatedSubTotal 
+FROM  SalesLT.SalesOrderDetail SOD INNER JOIN
+SalesLT.Product P ON SOD.ProductID=P.ProductID
+GROUP BY SOD.SalesOrderID
 
 
 --5.Show the best selling item by value.
