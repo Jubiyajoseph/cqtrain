@@ -1,6 +1,6 @@
 --5. Show the CompanyName for all customers with an address in City 'Dallas'.
 
---USING exists clause
+--UPDATED query using EXISTS clause
 SELECT CompanyName FROM SalesLT.Customer C 
 WHERE EXISTS(SELECT * FROM SalesLT.CustomerAddress CA INNER JOIN
 SalesLT.Address A ON A.AddressID=CA.AddressID WHERE C.CustomerID=CA.CustomerID
@@ -8,10 +8,15 @@ AND A.City='Dallas')
 
  --6. How many items with ListPrice more than $1000 have been sold?
 
+--UPDATED query using EXISTS clause
+SELECT COUNT(*) FROM SalesLT.Product P WHERE EXISTS
+(SELECT * FROM SalesLT.SalesOrderDetail SOD
+INNER JOIN SalesLT.SalesOrderDetail SOH ON SOD.SalesOrderID=SOH.SalesOrderID
+WHERE SOD.ProductID= P.ProductID AND P.ListPrice>1000) 
 
 --7. Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight
 
---USING GROUP BY clause
+--UPDATED query using GROUP BY clause
 SELECT C.CompanyName, SUM(SOH.SubTotal + SOH.TaxAmt + SOH.Freight) AS Amount
 FROM SalesLT.Customer C
 JOIN SalesLT.SalesOrderHeader SOH ON C.CustomerID = SOH.CustomerID
