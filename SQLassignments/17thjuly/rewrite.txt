@@ -11,7 +11,7 @@ AND A.City='Dallas')
 
 --7. Give the CompanyName of those customers with orders over $100000. Include the subtotal plus tax plus freight
 
---USING exists clause
+--USING GROUP BY clause
 SELECT C.CompanyName, SUM(SOH.SubTotal + SOH.TaxAmt + SOH.Freight) AS Amount
 FROM SalesLT.Customer C
 JOIN SalesLT.SalesOrderHeader SOH ON C.CustomerID = SOH.CustomerID
