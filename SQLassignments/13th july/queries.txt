@@ -135,7 +135,7 @@ ON SOD.ProductID=P.ProductID GROUP BY p.ProductID ORDER BY Profit DESC
     --c) which hasn't placed any orders
 
 --6A
-SELECT TOP 1 A.City, COUNT(*) AS Count
+SELECT TOP 1 PERCENT WITH TIES A.City, COUNT(*) AS Count
 FROM SalesLT.SalesOrderHeader SOH
 INNER JOIN SalesLT.Address A ON SOH.ShipToAddressID = A.AddressID
 GROUP BY A.City ORDER BY Count DESC
