@@ -15,7 +15,6 @@ namespace ConsoleApp10
 
         public Triangle(int noOfSides,int sideLength1, int sideLength2,int sideLength3): base(noOfSides)
         {
-            NoOfSides = noOfSides;
             SideLength1 = sideLength1;
             SideLength2 = sideLength2;
             SideLength3 = sideLength3;

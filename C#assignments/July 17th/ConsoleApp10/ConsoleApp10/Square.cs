@@ -11,7 +11,6 @@ namespace ConsoleApp10
         public int Length { get; set; }
         public Square(int noOfSides,int length) : base(noOfSides)
         {
-            NoOfSides = noOfSides;
             Length = length;
         }
         public override double CalculateArea()

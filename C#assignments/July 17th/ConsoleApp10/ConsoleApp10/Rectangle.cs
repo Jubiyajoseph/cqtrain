@@ -13,7 +13,6 @@ namespace ConsoleApp10
 
         public Rectangle(int noOfSides,int length,int breadth) : base(noOfSides)
         {
-            NoOfSides = noOfSides;
             Length = length;
             Breadth = breadth;
         }
