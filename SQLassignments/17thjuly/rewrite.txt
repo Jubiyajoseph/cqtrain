@@ -21,3 +21,18 @@ SELECT C.CompanyName, SUM(SOH.SubTotal + SOH.TaxAmt + SOH.Freight) AS Amount
 FROM SalesLT.Customer C
 JOIN SalesLT.SalesOrderHeader SOH ON C.CustomerID = SOH.CustomerID
 GROUP BY C.CompanyName HAVING SUM(SOH.SubTotal + SOH.TaxAmt + SOH.Freight) > 100000
+
+
+--8. Find the number of left racing socks ('Racing Socks, L') ordered by CompanyName 'Riding Cycles'
+
+--USING exists clause
+SELECT SUM(sod.OrderQty) FROM SalesLT.SalesOrderDetail sod 
+WHERE EXISTS(SELECT 1 FROM SalesLT.Product p INNER JOIN SalesLT.SalesOrderHeader soh
+ON sod.SalesOrderID = soh.SalesOrderID INNER JOIN SalesLT.Customer c 
+ON soh.CustomerID = c.CustomerID WHERE p.Name = 'Racing Socks, L' AND
+c.CompanyName = 'Riding Cycles' and sod.ProductID = p.ProductID)
+
+--9. “Single Item Order” is a customer order where only one item is ordered. 
+--Show the SalesOrderID and the UnitPrice for every Single Item Order.
+
+--USING exists clause
