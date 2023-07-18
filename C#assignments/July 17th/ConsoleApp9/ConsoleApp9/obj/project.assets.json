@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CQ-Jubiya\\source\\repos\\ConsoleApp9\\ConsoleApp9\\ConsoleApp9.csproj",
+      "projectUniqueName": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\July 17th\\ConsoleApp9\\ConsoleApp9\\ConsoleApp9.csproj",
       "projectName": "ConsoleApp9",
-      "projectPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\ConsoleApp9\\ConsoleApp9\\ConsoleApp9.csproj",
+      "projectPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\July 17th\\ConsoleApp9\\ConsoleApp9\\ConsoleApp9.csproj",
       "packagesPath": "C:\\Users\\CQ-Jubiya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\ConsoleApp9\\ConsoleApp9\\obj\\",
+      "outputPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\July 17th\\ConsoleApp9\\ConsoleApp9\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CQ-Jubiya\\AppData\\Roaming\\NuGet\\NuGet.Config",

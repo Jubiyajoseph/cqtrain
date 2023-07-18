@@ -9,7 +9,7 @@ if (emp.Jobtype == 'P')
 {
     ibc = new PermanentEmployeeBonusCalculator();
 }     
-else
+else if (emp.Jobtype == 'C')
 {
     ibc = new ContractEmployeeBonusCalculator();
 }
