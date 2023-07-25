@@ -169,7 +169,8 @@ select * from SEAT
 
 select * from SHOW
 
+select * from PAYMENTMETHOD
+
 select * from BOOKING
 select * from BOOKEDSEAT
-select * from PAYMENTMETHOD
 select * from PAYMENT
