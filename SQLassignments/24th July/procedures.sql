@@ -405,3 +405,94 @@ END
 GO
 
 EXEC AddReview @CustomerId=100,@MovieLangID=700,@Review='NICE MOVIE'
+
+
+
+--proc for GetMoviesByLanguages , Place , Geners
+
+create or alter PROC GetMoviesfortoday
+@Genre EntityIds READONLY,
+@Language EntityIds READONLY,
+@CityID INT
+AS
+BEGIN
+SELECT M.* FROM SHOW S
+INNER JOIN MOVIELANGUAGE ML
+  ON S.MovieLangID=ML.MovieLangID
+INNER JOIN LANGUAGE L
+  ON ML.LanguageID=L.LanguageID AND L.LanguageID IN(SELECT Id FROM @Language)
+INNER JOIN MOVIE M
+  ON M.MovieID=ML.MovieID
+INNER JOIN MOVIEGENRE MG
+  ON ML.MovieID=MG.MovieID AND MG.GenreID IN (SELECT Id FROM @Genre)
+INNER JOIN THEATER T
+  ON S.TheaterID=T.TheaterID
+INNER JOIN CITY C
+  ON T.CityID=C.CityID AND C.CityID= @CityID 
+WHERE S.ShowDate= CAST(GETDATE() AS DATE)
+
+END
+
+DECLARE @G EntityIds
+INSERT INTO @G
+select 603
+
+
+DECLARE @L EntityIds
+INSERT INTO @L
+SELECT 500
+
+EXEC GetMoviesfortoday @Genre=@G,@Language=@L,@CityID=200
+GO
+
+
+--SP to GetShowDetails by MovieLanguage Id
+CREATE OR ALTER PROC GetShowDetailsbyMovieLangID
+@Mlang int
+AS
+BEGIN 
+     SELECT * FROM SHOW WHERE MovieLangID=@Mlang
+
+END
+
+EXEC GetShowDetailsbyMovieLangID @Mlang=700
+EXEC GetShowDetailsbyMovieLangID @Mlang=701
+GO
+
+
+
+
+
+
+
+--- sp to get booked ticket details
+CREATE OR ALTER PROC GetBookedDetails
+@bookid int
+AS
+BEGIN
+  SELECT C.CustomerName,M.MovieTitle,T.TheaterName,S.ShowDate,S.ShowStartTime,
+  B.TotalAmount,STYPE.SeatTypeName,BS.BookedSeatID,B.BookingID,B.Boookingdate
+  FROM BOOKING B
+  INNER JOIN SHOW S
+    ON B.ShowID=S.ShowID
+  INNER JOIN BOOKEDSEAT BS
+    ON B.BookingID = BS.BookingID
+  INNER JOIN SCREEN SC
+    ON S.ScreenID=SC.ScreenID
+  INNER JOIN SEAT SE
+    ON SE.ScreenID=S.ScreenID
+  INNER JOIN SEATTYPE STYPE
+    ON SE.SeatTypeID=STYPE.SeatTypeID
+  INNER JOIN THEATER T
+    ON SC.TheaterID=T.TheaterID
+  INNER JOIN MOVIELANGUAGE ML
+    ON S.MovieLangID=ML.MovieLangID
+  INNER JOIN MOVIE M
+    ON M.MovieID=ML.MovieID
+  INNER JOIN CUSTOMER C
+    ON C.CustomerID=B.CustomerID
+  WHERE B.BookingID=@bookid
+
+END
+go
+EXEC GetBookedDetails @bookid=1402
