@@ -344,3 +344,64 @@ go
 EXEC AddPayment 'UPI'
 EXEC AddPayment 'Credit Card'
 EXEC AddPayment 'Debit Card'
+
+
+--create procedure for Booking
+
+CREATE TYPE Ids AS TABLE
+(
+    ID INT
+)
+GO
+CREATE or alter PROCEDURE AddBooking
+@CustomerID INT,
+@ShowID INT,
+@Boookingdate DATE,
+@PayMethodID INT,
+@SeatID Ids READONLY
+AS
+BEGIN
+   INSERT INTO BOOKING(CustomerID,ShowID,Boookingdate,TotalAmount)
+		  SELECT @CustomerID,@ShowID,@Boookingdate ,SUM(Seatprice) 
+		  FROM  @SeatID as i 
+		  INNER JOIN SEAT s 
+	          on i.ID =s.SeatID
+		  INNER JOIN SEATTYPE st
+              on s.SeatTypeID=st.SeatTypeID
+
+   DECLARE @BookingID int = @@identity
+   
+   INSERT INTO BOOKEDSEAT(SeatId,BookingID)
+   SELECT ID,@BookingID from @SeatID
+
+   INSERT INTO PAYMENT(BookingID,PayMethodID)
+   select @BookingID,@PayMethodID
+END
+GO
+
+DECLARE @i Ids
+INSERT INTO @i
+SELECT 1302
+UNION ALL
+SELECT 1303
+
+EXEC AddBooking @CustomerID=100,@ShowID=1101,@Boookingdate='2023-07-19',@PayMethodID=1600,@SeatID=@i
+GO
+
+
+
+--CREATE PROCEDURE FOR REVIEW
+
+CREATE or alter PROCEDURE AddReview
+@CustomerId	INT,
+@MovieLangID INT,
+@Review	VARCHAR(150)
+AS
+ BEGIN
+      INSERT INTO REVIEW(CustomerId,MovieLangID,Review)
+             VALUES(@CustomerId,@MovieLangID,@Review)
+
+END
+GO
+
+EXEC AddReview @CustomerId=100,@MovieLangID=700,@Review='NICE MOVIE'
