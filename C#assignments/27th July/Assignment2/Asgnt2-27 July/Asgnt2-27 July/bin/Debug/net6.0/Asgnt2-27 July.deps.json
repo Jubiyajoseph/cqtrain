@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Asgnt2-27 July/1.0.0": {
+        "runtime": {
+          "Asgnt2-27 July.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Asgnt2-27 July/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
