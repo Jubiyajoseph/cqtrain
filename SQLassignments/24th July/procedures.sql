@@ -408,7 +408,8 @@ EXEC AddReview @CustomerId=100,@MovieLangID=700,@Review='NICE MOVIE'
 
 
 
---proc for GetMoviesByLanguages , Place , Geners
+
+--1. proc for GetMoviesByLanguages , Place , Geners
 
 create or alter PROC GetMoviesfortoday
 @Genre EntityIds READONLY,
@@ -446,7 +447,8 @@ EXEC GetMoviesfortoday @Genre=@G,@Language=@L,@CityID=200
 GO
 
 
---SP to GetShowDetails by MovieLanguage Id
+
+--2. SP to GetShowDetails by MovieLanguage Id
 CREATE OR ALTER PROC GetShowDetailsbyMovieLangID
 @Mlang int
 AS
@@ -461,11 +463,71 @@ GO
 
 
 
+--3. CREATE PROC FOR GetSeatInfoByShowId
+
+CREATE OR ALTER PROC GetSeatInfoByShowId
+@showid int
+AS
+BEGIN
+    SELECT S.SeatID, ST.SeatTypeName,
+      CASE
+          WHEN B.BookingID IS NULL THEN 'Available'
+          ELSE 'Booked'
+      END AS SeatStatus
+    FROM Show SH
+    INNER JOIN Screen SC ON SH.ScreenID = SC.ScreenID
+    INNER JOIN Seat S ON SC.ScreenID = S.ScreenID
+    INNER JOIN SeatType ST ON S.SeatTypeID = ST.SeatTypeID
+    LEFT JOIN Booking B ON SH.ShowID = B.ShowID 
+    LEFT JOIN BookedSeat BS ON  S.SeatID = BS.SeatID
+    WHERE SH.ShowID = @showID;
+
+END
+GO
+
+EXEC GetSeatInfoByShowId @showid=1101
+EXEC GetSeatInfoByShowId @showid=1107
+GO
 
 
+--4. Proc for booking tickets 
+CREATE or alter PROCEDURE AddBooking
+@CustomerID INT,
+@ShowID INT,
+@Boookingdate DATE,
+@PayMethodID INT,
+@SeatID Ids READONLY
+AS
+BEGIN
+   INSERT INTO BOOKING(CustomerID,ShowID,Boookingdate,TotalAmount)
+		  SELECT @CustomerID,@ShowID,@Boookingdate ,SUM(Seatprice) 
+		  FROM  @SeatID as i 
+		  INNER JOIN SEAT s 
+	          on i.ID =s.SeatID
+		  INNER JOIN SEATTYPE st
+              on s.SeatTypeID=st.SeatTypeID
+
+   DECLARE @BookingID int = @@identity
+   
+   INSERT INTO BOOKEDSEAT(SeatId,BookingID)
+   SELECT ID,@BookingID from @SeatID
+
+   INSERT INTO PAYMENT(BookingID,PayMethodID)
+   select @BookingID,@PayMethodID
+END
+GO
+
+DECLARE @i Ids
+INSERT INTO @i
+SELECT 1302
+UNION ALL
+SELECT 1303
+
+EXEC AddBooking @CustomerID=100,@ShowID=1101,@Boookingdate='2023-07-19',@PayMethodID=1600,@SeatID=@i
+GO
 
 
---- sp to get booked ticket details
+-- 5. sp to get booked ticket details
 CREATE OR ALTER PROC GetBookedDetails
 @bookid int
 AS
