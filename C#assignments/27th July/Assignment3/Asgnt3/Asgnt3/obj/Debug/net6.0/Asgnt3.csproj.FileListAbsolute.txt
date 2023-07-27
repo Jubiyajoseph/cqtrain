@@ -1,0 +1,15 @@
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\bin\Debug\net6.0\Asgnt3.exe
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\bin\Debug\net6.0\Asgnt3.deps.json
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\bin\Debug\net6.0\Asgnt3.runtimeconfig.json
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\bin\Debug\net6.0\Asgnt3.dll
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\bin\Debug\net6.0\Asgnt3.pdb
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.dll
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\refint\Asgnt3.dll
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.pdb
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\Asgnt3.genruntimeconfig.cache
+C:\Users\CQ-Jubiya\source\repos\Asgnt3\Asgnt3\obj\Debug\net6.0\ref\Asgnt3.dll
