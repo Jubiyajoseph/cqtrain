@@ -1,0 +1,12 @@
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\bin\Debug\net6.0\Employee.Model.deps.json
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\bin\Debug\net6.0\Employee.Model.dll
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\bin\Debug\net6.0\Employee.Model.pdb
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.dll
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\refint\Employee.Model.dll
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\Employee.Model.pdb
+C:\Users\CQ-Jubiya\source\repos\Employee.Model\Employee.Model\obj\Debug\net6.0\ref\Employee.Model.dll
