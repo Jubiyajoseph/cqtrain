@@ -7,5 +7,5 @@ Console.WriteLine("Enter some words=");
 string input = Console.ReadLine();
 Console.WriteLine("Enter the word to find the occurence=");
 string word = Console.ReadLine();
-int value = StringExtensionClass.WordCount(input,word);
+int value = input.WordCount(word);
 Console.WriteLine("Occurence of the word "+ word + " is "+ value);
