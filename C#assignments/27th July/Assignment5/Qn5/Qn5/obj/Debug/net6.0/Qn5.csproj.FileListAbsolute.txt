@@ -1,0 +1,15 @@
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\bin\Debug\net6.0\Qn5.exe
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\bin\Debug\net6.0\Qn5.deps.json
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\bin\Debug\net6.0\Qn5.runtimeconfig.json
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\bin\Debug\net6.0\Qn5.dll
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\bin\Debug\net6.0\Qn5.pdb
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.dll
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\refint\Qn5.dll
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.pdb
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\Qn5.genruntimeconfig.cache
+C:\Users\CQ-Jubiya\source\repos\Qn5\Qn5\obj\Debug\net6.0\ref\Qn5.dll
