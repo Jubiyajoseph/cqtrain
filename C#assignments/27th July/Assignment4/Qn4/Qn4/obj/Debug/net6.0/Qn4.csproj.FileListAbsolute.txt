@@ -13,3 +13,18 @@ C:\Users\CQ-Jubiya\source\repos\Qn4\Qn4\obj\Debug\net6.0\refint\Qn4.dll
 C:\Users\CQ-Jubiya\source\repos\Qn4\Qn4\obj\Debug\net6.0\Qn4.pdb
 C:\Users\CQ-Jubiya\source\repos\Qn4\Qn4\obj\Debug\net6.0\Qn4.genruntimeconfig.cache
 C:\Users\CQ-Jubiya\source\repos\Qn4\Qn4\obj\Debug\net6.0\ref\Qn4.dll
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\bin\Debug\net6.0\Qn4.exe
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\bin\Debug\net6.0\Qn4.deps.json
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\bin\Debug\net6.0\Qn4.runtimeconfig.json
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\bin\Debug\net6.0\Qn4.dll
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\bin\Debug\net6.0\Qn4.pdb
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.dll
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\refint\Qn4.dll
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.pdb
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\Qn4.genruntimeconfig.cache
+C:\Users\CQ-Jubiya\cqtrain\C#assignments\27th July\Assignment4\Qn4\Qn4\obj\Debug\net6.0\ref\Qn4.dll

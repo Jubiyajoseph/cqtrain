@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CQ-Jubiya\\source\\repos\\Qn4\\Qn4\\Qn4.csproj": {}
+    "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\27th July\\Assignment4\\Qn4\\Qn4\\Qn4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CQ-Jubiya\\source\\repos\\Qn4\\Qn4\\Qn4.csproj": {
+    "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\27th July\\Assignment4\\Qn4\\Qn4\\Qn4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CQ-Jubiya\\source\\repos\\Qn4\\Qn4\\Qn4.csproj",
+        "projectUniqueName": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\27th July\\Assignment4\\Qn4\\Qn4\\Qn4.csproj",
         "projectName": "Qn4",
-        "projectPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\Qn4\\Qn4\\Qn4.csproj",
+        "projectPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\27th July\\Assignment4\\Qn4\\Qn4\\Qn4.csproj",
         "packagesPath": "C:\\Users\\CQ-Jubiya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\Qn4\\Qn4\\obj\\",
+        "outputPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\27th July\\Assignment4\\Qn4\\Qn4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Jubiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
