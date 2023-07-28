@@ -1,0 +1,15 @@
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\bin\Debug\net6.0\Qn6.exe
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\bin\Debug\net6.0\Qn6.deps.json
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\bin\Debug\net6.0\Qn6.runtimeconfig.json
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\bin\Debug\net6.0\Qn6.dll
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\bin\Debug\net6.0\Qn6.pdb
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.dll
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\refint\Qn6.dll
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.pdb
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\Qn6.genruntimeconfig.cache
+C:\Users\CQ-Jubiya\source\repos\Qn6\Qn6\obj\Debug\net6.0\ref\Qn6.dll
