@@ -64,7 +64,14 @@ function Result()
       console.log(StudCheck);
 
       //6. Assuming that there is only one student having a first name as John, Print his department name.
-      const Studname=students.filter(x => x.FirstName === "John")
-      const Dname=Studname.map(x => x.Department)
-      console.log(Dname)
+      // const Studname=students.filter(x => x.FirstName === "John")
+      // const Dname=Studname.map(x => x.Department)
+      // console.log(Dname)       ///return an object
+
+      const john = students.find(x => x.FirstName === "John");
+      if (john)
+      {
+        console.log(john.Department);       //return a string
+      }
+
 }
