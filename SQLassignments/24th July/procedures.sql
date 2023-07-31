@@ -1,3 +1,4 @@
+use BookMyShow
 
 --create procedure for customer
 CREATE PROCEDURE AddCustomer
@@ -417,21 +418,46 @@ create or alter PROC GetMoviesfortoday
 @CityID INT
 AS
 BEGIN
+--SELECT M.* FROM SHOW S
+--INNER JOIN MOVIELANGUAGE ML
+--  ON S.MovieLangID=ML.MovieLangID
+--INNER JOIN LANGUAGE L
+--  ON ML.LanguageID=L.LanguageID AND L.LanguageID IN(SELECT Id FROM @Language)
+--INNER JOIN MOVIE M
+--  ON M.MovieID=ML.MovieID
+--INNER JOIN MOVIEGENRE MG
+--  ON ML.MovieID=MG.MovieID AND MG.GenreID IN (SELECT Id FROM @Genre)
+--INNER JOIN THEATER T
+--  ON S.TheaterID=T.TheaterID
+--INNER JOIN CITY C
+--  ON T.CityID=C.CityID AND C.CityID= @CityID 
+--WHERE S.ShowDate= CAST(GETDATE() AS DATE)
+
 SELECT M.* FROM SHOW S
 INNER JOIN MOVIELANGUAGE ML
   ON S.MovieLangID=ML.MovieLangID
 INNER JOIN LANGUAGE L
-  ON ML.LanguageID=L.LanguageID AND L.LanguageID IN(SELECT Id FROM @Language)
+  ON ML.LanguageID=L.LanguageID 
 INNER JOIN MOVIE M
   ON M.MovieID=ML.MovieID
 INNER JOIN MOVIEGENRE MG
-  ON ML.MovieID=MG.MovieID AND MG.GenreID IN (SELECT Id FROM @Genre)
+  ON ML.MovieID=MG.MovieID 
 INNER JOIN THEATER T
   ON S.TheaterID=T.TheaterID
 INNER JOIN CITY C
-  ON T.CityID=C.CityID AND C.CityID= @CityID 
+  ON T.CityID=C.CityID 
 WHERE S.ShowDate= CAST(GETDATE() AS DATE)
-
+AND (
+L.LanguageID IN(SELECT Id FROM @Language)
+OR
+NOT EXISTS(SELECT Id FROM @Language)
+)
+AND(
+MG.GenreID IN (SELECT Id FROM @Genre)
+OR
+NOT EXISTS(SELECT Id FROM @Genre)
+)
+AND (C.CityID= @CityID )
 END
 
 DECLARE @G EntityIds
