@@ -1,6 +1,6 @@
 function ShowResult()
 {
-    var students=
+    const students=
     [
         {"id":1,"Name":"Jubiya"},
         {"id":2,"Name":"Ramu"},
@@ -22,6 +22,11 @@ function ShowResult()
     };
     students.reduce(fn);
     console.log(namestring);
+
+    console.log("Using join method");
+    const studnames = students.map(x => x.Name);
+    const NamesofStudents = studnames.join(' , ');
+    console.log(NamesofStudents);
 
 }
 
