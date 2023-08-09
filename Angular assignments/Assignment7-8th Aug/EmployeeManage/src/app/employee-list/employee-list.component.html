@@ -1,0 +1,34 @@
+<h2 >EMPLOYEE DETAILS</h2>
+<table >
+    <thead>
+        <tr>
+            <th><b>FIRST NAME</b></th>
+            <th><b>LAST NAME</b></th>
+            <th><b>DATE OF BIRTH</b></th>
+            <th><b>AGE</b></th>
+            <th><b>JOINING DATE</b></th>
+            <th><b>COUNTRY</b></th>
+        </tr>
+    </thead>
+
+    <tbody>      
+    <tr *ngFor="let e of emp">
+        <td>{{e.FirstName}}</td>
+        <td>{{e.LastName}}</td>
+        <td>{{e.DOB}}</td>
+        <td>{{e.Age}}</td>
+        <td>{{e.DOJ}}</td>
+        <td>{{e.Country}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<style>
+    table,th,td{  
+        border: 1px solid black;      
+        border-collapse: collapse;
+        background-color: bisque;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
