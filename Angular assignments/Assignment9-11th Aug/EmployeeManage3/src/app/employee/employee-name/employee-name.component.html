@@ -1,0 +1,26 @@
+<table>
+    <caption>Employee table</caption>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let i of emp" >   
+            <td (click)="navigatetoEmployee(i)" > {{ i.FirstName }}</td>
+            <td>{{i.LastName}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<style>
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>
