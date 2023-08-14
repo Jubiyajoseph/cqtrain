@@ -1,11 +1,13 @@
 <h2>Welcome!</h2>
-<app-employee-name *ngIf="show" (passToparent)="showGrid($event)"></app-employee-name>
-<app-employee-details *ngIf="!show" [detailsofEmp]="details" (moveback)="changeView()"></app-employee-details>
+<app-home-component></app-home-component>
+<router-outlet></router-outlet>
+<!-- <app-employee-name *ngIf="show" (passToparent)="showGrid($event)"></app-employee-name>
+<app-employee-details *ngIf="!show" [detailsofEmp]="details" (moveback)="changeView()"></app-employee-details> -->
 
-<style>
+<!-- <style>
   h2{
     text-align: center;
     background-color: aqua;
     padding: 5px;
   }
-</style>
+</style> -->

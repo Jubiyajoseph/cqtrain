@@ -8,17 +8,6 @@ import { IEmployeeData } from './employee/IEmployeeData';
 })
 export class AppComponent {
   title = 'EmployeeManage2';
-  public show =true;
-  details?: IEmployeeData;
 
-  public showGrid(e : IEmployeeData)
-  {
-    this.show = false;
-    this.details= e;
-  }
-
-  public changeView() {
-    this.show=true;
-  }
 
 }

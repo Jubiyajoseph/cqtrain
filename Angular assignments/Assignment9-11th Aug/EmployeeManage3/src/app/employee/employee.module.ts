@@ -4,7 +4,6 @@ import { EmployeeNameComponent } from './employee-name/employee-name.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { AppModule } from '../app.module';
 
-
 @NgModule({
   declarations: [
     EmployeeNameComponent,
