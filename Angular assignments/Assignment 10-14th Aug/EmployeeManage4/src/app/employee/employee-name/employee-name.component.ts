@@ -18,7 +18,7 @@ export class EmployeeNameComponent {
     this.emp = empService.empList;
   }
 
-  @Output() passToparent=new EventEmitter<IEmployeeData>();
+  //@Output() passToparent=new EventEmitter<IEmployeeData>();
   navigatetoEmployee(value : IEmployeeData)
   {
     this.router.navigate([`./${value.id}/employeedetails`],

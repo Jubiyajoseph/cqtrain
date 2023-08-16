@@ -13,7 +13,7 @@ export class EmployeeDetailsComponent implements OnInit {
 public emp: Array<IEmployeeData>=[];
 public empId!: number;
 public detailsOfEmp?: IEmployeeData
-@Output() moveback=new EventEmitter<boolean>();
+//@Output() moveback=new EventEmitter<boolean>();
 
 
 constructor(private empService: EmployeesService, private router: Router, private activatedRoute: ActivatedRoute)
