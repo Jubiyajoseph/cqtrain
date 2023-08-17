@@ -7,14 +7,14 @@ import { DepartmentDetailsComponent } from './department/department-details/depa
 
 const routes: Routes = [
   {
-  path:'employee-name',
+  path:'employees',
   children: [
     {
       path: '',
       component: EmployeeNameComponent
     },
     {
-      path: ':id/employeedetails',
+      path: ':id/employee-details',
       component: EmployeeDetailsComponent
     }
   ]
@@ -27,7 +27,7 @@ const routes: Routes = [
       component: DepartmentListComponent
     },
     {
-      path: 'deptdetails/:id',
+      path: 'dept-details/:id',
       component: DepartmentDetailsComponent
     }
   ]

@@ -17,10 +17,10 @@ export class DepartmentListComponent {
     this.dep=depService.deptList;
   }
 
-  //@Output() passToParent=new EventEmitter<IEmpDept>();
+ 
   navigatetoDept(value : IEmpDept)
   {
-    this.router.navigate([`./deptdetails/${value.id}`],
+    this.router.navigate([`./dept-details/${value.id}`],
     {
       relativeTo:this.activateRoute
     })

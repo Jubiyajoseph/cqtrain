@@ -28,7 +28,7 @@ export class DepartmentDetailsComponent implements OnInit {
     this.deptDetails = this.dep.find((x)=> x.id === this.deptId ) 
   }
 
-  change()
+  backToDept()
   {
     this.route.navigate(['./deptlist'])
   }

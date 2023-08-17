@@ -28,10 +28,10 @@ constructor(private empService: EmployeesService, private router: Router, privat
     console.log(this.empId);
     this.detailsOfEmp = this.emp.find((x) => x.id === this.empId)
   }
-change()
+backToEmplist()
 {
   //this.moveback.emit();
-  this.router.navigate(['./employee-name'])
+  this.router.navigate(['./employees'])
 }
 
 }

@@ -15,11 +15,16 @@ constructor(private router: Router) {
 
   onEmployeeClick()
   {
-    this.router.navigate(['./employee-name'])
+    this.router.navigate(['./employees'])
 
   }
   backToHome()
   {
     this.router.navigate(['.'])
+  }
+    onDeptClick()
+  {
+    this.router.navigate(['./deptlist'])
+
   }
 }
