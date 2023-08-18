@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {}
+    "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
+    "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
+        "projectUniqueName": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
         "projectName": "EmployeeApplication.Model",
-        "projectPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
+        "projectPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\EmployeeApplication.Model.csproj",
         "packagesPath": "C:\\Users\\CQ-Jubiya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\obj\\",
+        "outputPath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CQ-Jubiya\\AppData\\Roaming\\NuGet\\NuGet.Config",

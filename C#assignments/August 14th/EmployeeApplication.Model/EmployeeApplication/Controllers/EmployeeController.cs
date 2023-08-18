@@ -14,40 +14,41 @@ namespace EmployeeApplication.Controllers
             _context = dbContext;
         }
 
-        [HttpPost("AddEmployee")]
-        public void post(EmployeeDuplicate emp)
+        [HttpPost]
+        public void Post(EmployeeDuplicate emp)
         {
             Employee employee = new Employee();
             employee.FirstName = emp.FirstName;
             employee.LastName = emp.LastName;
             employee.PhoneNumber = emp.PhoneNumber;
             employee.Email = emp.Email;
+            employee.DepartmentId = emp.DepartmentId;
             _context.Add(employee);
             _context.SaveChanges();
         }
 
-        [HttpDelete("DeleteEmployeeById")]
-        public void delete(Employee emp, int id)
+        [HttpDelete("deleteEmployeeById/{id}")]
+        public void Delete(Employee emp, int id)
         {
             emp.Id = id;
             _context.Remove(emp);
             _context.SaveChanges();
         }
 
-        [HttpGet("GetById")]
-        public IActionResult getById(int id)
+        [HttpGet("getById/{id}")]
+        public IActionResult GetById(int id)
         {
             return Ok(_context?.Employees.Find(id));
         }
 
-        [HttpGet("GetAll")]
-        public IActionResult getAll()
+        [HttpGet]
+        public IActionResult GetAll()
         {
             return Ok(_context.Employees);
         }
 
-        [HttpPut("UpdateName")]
-        public void put(int id, string fname,string lname)
+        [HttpPut("updateName")]
+        public void Put(int id, string fname,string lname)
         {
             var idvalue = _context?.Employees.Find(id);
             if (idvalue != null)

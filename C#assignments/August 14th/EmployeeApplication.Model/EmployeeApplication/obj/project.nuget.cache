@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "23MThoXC4dhMsX9/QI+Zg6OFeW0EFshsKmxWXoYf3YUoxgUpl1VlXT+ZjRPLX7LSjWxITlG50ANfKPrfNflGjA==",
+  "dgSpecHash": "qF6ZbUwb5mg9iDojLIItAtiCR36C2Cjeb4FuKZJC3pjS44CcA1+whjy4nvMc6lh75V5ZUKF80UjiFF3VyavJTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CQ-Jubiya\\source\\repos\\August 14th\\EmployeeApplication.Model\\EmployeeApplication\\EmployeeApplication.csproj",
+  "projectFilePath": "C:\\Users\\CQ-Jubiya\\cqtrain\\C#assignments\\August 14th\\EmployeeApplication.Model\\EmployeeApplication\\EmployeeApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CQ-Jubiya\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\CQ-Jubiya\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

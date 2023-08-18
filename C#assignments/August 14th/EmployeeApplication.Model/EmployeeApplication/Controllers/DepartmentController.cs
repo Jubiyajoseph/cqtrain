@@ -14,38 +14,38 @@ namespace EmployeeApplication.Controllers
             _context = dbContext;
         }
 
-        [HttpPost("AddDepartment")]
-        public void post(DepartmentDuplicate dept)
+        [HttpPost]
+        public void Post(DepartmentDuplicate dept)
         {
             Department department = new Department();
             department.Name = dept.Name;
             department.LocationId = dept.LocationId;
-            _context.Departments.Add(department);
+            _context.Add(department);
             _context.SaveChanges();
         }
 
-        [HttpDelete("DeleteDepartmentById")]
-        public void delete(Department dept, int id)
+        [HttpDelete("deleteDepartmentById/{id}")]
+        public void Delete(Department dept, int id)
         {
             dept.Id = id;
             _context.Remove(dept);
             _context.SaveChanges();
         }
 
-        [HttpGet("GetById")]
-        public IActionResult getById(int id)
+        [HttpGet("getById/{id}")]
+        public IActionResult GetById(int id)
         {
             return Ok(_context.Departments.Find(id));
         }
 
-        [HttpGet("GetAll")]
-        public IActionResult getAll()
+        [HttpGet]
+        public IActionResult GetAll()
         {
             return Ok(_context.Departments);
         }
 
-        [HttpPut("Update")]
-        public void put(int id, string name)
+        [HttpPut("{id}")]
+        public void Put(int id, string name)
         {
             var idvalue = _context?.Departments.Find(id);
             if (idvalue != null)
