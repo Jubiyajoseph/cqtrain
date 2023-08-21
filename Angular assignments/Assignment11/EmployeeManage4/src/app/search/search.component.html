@@ -1,0 +1,37 @@
+
+<div>
+    <form [formGroup]="searchForm" (ngSubmit)="onClickSearch()">
+        <br>
+        <input type="text" placeholder="Search by name" formControlName="searchName">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>DOB</th>
+        <th>AGE</th>
+        <th>DOJ</th>
+        <th>COUNTRY</th>
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.id}}</td>
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.dateOfBirth}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.dateOfJoining}}</td>
+        <td>{{i.country}}</td>
+    </tr>
+</table>
+
+<style>
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>

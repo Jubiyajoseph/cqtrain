@@ -1,0 +1,33 @@
+<table>
+    <caption> Department table</caption>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let i of dep" >   
+            <td>{{i.id}}</td>
+            <td (click)="navigatetoDept(i)" > {{ i.deptName}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<button (click)="addNewDept()">Add new Department</button>
+<br>
+<br>
+<br>
+<button (click)="searchDept()">Search Department</button>
+
+<style>
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>

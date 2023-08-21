@@ -1,0 +1,34 @@
+<!-- <app-search></app-search> -->
+<table>
+    <caption>Employee table</caption>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let i of emp" >   
+            <td>{{i.id}}</td>
+            <td (click)="navigatetoEmployee(i)" > {{ i.firstName }}</td>
+            <td>{{i.lastName}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<button (click)="addNewEmployee()">Add new Employee</button>
+<br>
+<br>
+<br>
+<button (click)="searchEmployee()">Search Employee</button>
+<style>
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>
