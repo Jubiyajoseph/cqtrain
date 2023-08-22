@@ -21,43 +21,24 @@
     <input type="text" formControlName="country">
     <br>
     <br>
-    <button type="submit">Add Employee</button>
+    <button type="submit" (click)= "showErrors= true">Add Employee</button>
 </form>
 
 
 
-<!-- Display validation errors for the firstName control -->
-<!-- <div *ngIf="empForm?.get('firstName')?.invalid ">
-  <div *ngIf="empForm?.get('firstName')?.errors?.['required']">
-    First name is required
-  </div>
-  <div *ngIf="empForm?.get('firstName')?.errors?.['minlength']">
-    First name should be longer than 5 characters
-  </div>
-</div> -->
-
-
-<div *ngIf="empForm?.get('firstName')?.errors?.['required']">
+<div *ngIf="showErrors && empForm?.get('firstName')?.errors?.['required']">
     First name is required
 </div>
 
-<div *ngIf="empForm?.get('firstName')?.errors?.['minlength']">
+<div *ngIf="showErrors && empForm?.get('firstName')?.errors?.['minlength']">
     First name should be longer than 5 characters
 </div>
 
-<div *ngIf="empForm?.get('lastName')?.errors?.['required']">
-    Last name is required
-</div>
+<div *ngIf="showErrors && empForm?.get('lastName')?.errors?.['required']"> Last name is required</div>
 
-<div *ngIf="empForm?.get('dateOfBirth')?.errors?.['required']">
-    DOB is required
-</div>
+<div *ngIf="showErrors && empForm?.get('dateOfBirth')?.errors?.['required']"> DOB is required</div>
 
-<div *ngIf="empForm?.get('dateOfJoining')?.errors?.['required']">
-    DOJ is required
-</div>
+<div *ngIf="showErrors && empForm?.get('dateOfJoining')?.errors?.['required']"> DOJ is required</div>
 
-<div *ngIf="empForm?.get('country')?.errors?.['required']">
-    Country is required
-</div>
+<div *ngIf="showErrors && empForm?.get('country')?.errors?.['required']"> Country is required</div>
 

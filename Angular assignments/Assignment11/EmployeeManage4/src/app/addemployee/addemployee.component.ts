@@ -34,6 +34,8 @@ export class AddemployeeComponent implements OnInit{
   {
   }
 
+  showErrors= false;
+
   ngOnInit(): void
   {
     this.empForm = this.fb.group({
