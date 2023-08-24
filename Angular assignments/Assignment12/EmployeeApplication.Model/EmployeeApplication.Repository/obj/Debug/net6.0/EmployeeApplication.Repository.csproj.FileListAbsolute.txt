@@ -1,0 +1,17 @@
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.csproj.AssemblyReference.cache
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.AssemblyInfoInputs.cache
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.AssemblyInfo.cs
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.csproj.CoreCompileInputs.cache
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Repository.deps.json
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Repository.runtimeconfig.json
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Repository.dll
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Repository.pdb
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Model.dll
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\bin\Debug\net6.0\EmployeeApplication.Model.pdb
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.csproj.CopyComplete
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.dll
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\refint\EmployeeApplication.Repository.dll
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.pdb
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\EmployeeApplication.Repository.genruntimeconfig.cache
+C:\Users\CQ-Jubiya\source\repos\EmployeeApplication.Model\EmployeeApplication.Repository\obj\Debug\net6.0\ref\EmployeeApplication.Repository.dll
