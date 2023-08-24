@@ -1,0 +1,32 @@
+
+<div>
+    <form [formGroup]="searchDepForm" (ngSubmit)="onSearch()">
+        <br>
+        <input type="text" placeholder="Search by department" formControlName="searchDepName">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+        <th>Manager Name</th>
+
+    </tr>
+    <tr *ngFor="let i of data">
+        <td>{{i.id}}</td>
+        <td>{{i.deptName}}</td>
+        <td>{{i.deptManager}}</td>
+
+    </tr>
+</table>
+
+<style>
+    table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>

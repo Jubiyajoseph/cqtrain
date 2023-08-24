@@ -1,0 +1,43 @@
+<h2>Add new employee</h2>
+
+<form [formGroup]="empForm" (ngSubmit)="onClickAddEmp()"> 
+
+    <label>First Name:</label>
+    <input type="text" formControlName="firstName">
+    <br>
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastName">
+    <br>
+    <label>DOB:</label>
+    <input type="date" formControlName="dateOfBirth">
+    <br>
+    <label>Age:</label>
+    <input type="text" formControlName="age">
+    <br>
+    <label>Date Of Joining:</label>
+    <input type="date" formControlName="dateOfJoining">
+    <br>
+    <label>Country:</label>
+    <input type="text" formControlName="country">
+    <br>
+    <br>
+    <button type="submit" (click)= "showErrors= true">Add Employee</button>
+</form>
+
+
+<div *ngIf="showErrors && empForm?.get('firstName')?.errors?.['required']">
+    First name is required
+</div>
+
+<div *ngIf="showErrors && empForm?.get('firstName')?.errors?.['minlength']">
+    First name should be longer than 5 characters
+</div>
+
+<div *ngIf="showErrors && empForm?.get('lastName')?.errors?.['required']"> Last name is required</div>
+
+<div *ngIf="showErrors && empForm?.get('dateOfBirth')?.errors?.['required']"> DOB is required</div>
+
+<div *ngIf="showErrors && empForm?.get('dateOfJoining')?.errors?.['required']"> DOJ is required</div>
+
+<div *ngIf="showErrors && empForm?.get('country')?.errors?.['required']"> Country is required</div>
+

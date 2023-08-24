@@ -22,6 +22,7 @@ export class AddemployeeComponent implements OnInit{
   };
 
   empForm = new FormGroup({
+    id: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     dateOfBirth: new FormControl(''),
@@ -34,11 +35,20 @@ export class AddemployeeComponent implements OnInit{
   {
   }
 
-  showErrors=false;
+  showErrors= false;
+
+  id: number = 0;
+  firstName: string = '';
+  lastName: string = '';
+  DOB!: Date;
+  age: number =0;
+  DOJ!: Date;
+  country: string ='';
 
   ngOnInit(): void
   {
     this.empForm = this.fb.group({
+      id: new FormControl(''),
       firstName: new FormControl('',[Validators.minLength(5),Validators.required]),
       lastName: new FormControl('',[Validators.maxLength(15),Validators.required]),
       dateOfBirth: new FormControl('',[Validators.required]),
@@ -52,14 +62,23 @@ export class AddemployeeComponent implements OnInit{
   {
     if(this.empForm.valid)
     {
-      this.newEmp.id=this.empService.empList[this.empService.empList.length-1].id + 1
-      this.newEmp.firstName = this.empForm.get('firstName')?.value!;
-      this.newEmp.lastName = this.empForm.get('lastName')?.value!;
-      this.newEmp.dateOfBirth = new Date(this.empForm.get('dateOfBirth')?.value!);
-      this.newEmp.age= Number(this.empForm.get('age')?.value);
-      this.newEmp.dateOfJoining = new Date(this.empForm.get('dateOfJoining')?.value!);
-      this.newEmp.country = this.empForm.get('country')?.value!;
-      this.empService.empList.push(this.newEmp);
+      this.firstName = this.empForm.get('firstName')?.value!;
+      this.lastName = this.empForm.get('lastName')?.value!;
+      this.DOB = new Date(this.empForm.get('dateOfBirth')?.value!);
+      this.age= Number(this.empForm.get('age')?.value);
+      this.DOJ= new Date(this.empForm.get('dateOfJoining')?.value!);
+      this.country = this.empForm.get('country')?.value!;
+
+      this.newEmp.firstName = this.firstName
+      this.newEmp.lastName = this.lastName
+      this.newEmp.dateOfBirth = this.DOB
+      this.newEmp.age= this.age
+      this.newEmp.dateOfJoining = this.DOJ
+      this.newEmp.country = this.country
+
+      this.empService.AddEmployee(this.newEmp).subscribe(data=>{console.log(data)});
+      
     }
+
   }
 }

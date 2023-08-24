@@ -1,0 +1,9 @@
+
+
+<form [formGroup]="empForm" (ngSubmit)="onDeleteEmp()">
+    <br>
+    <label>Select ID to delete:</label>
+    <input type="number" formControlName="id">
+    <br> 
+    <button type="submit"> Delete </button>
+</form>

@@ -1,0 +1,15 @@
+<br>
+<h2>Add new Department</h2>
+
+<form [formGroup]="deptForm" (ngSubmit)="onClickAddDept()">
+    
+    <label>Department Name:</label>
+    <input type="text" formControlName="depName">
+    <br>
+    <label>Manager Name:</label>
+    <input type="text" formControlName="managerName">
+    <br>
+    <br>
+    <br>
+    <button type="submit">Add Department</button>
+</form>
